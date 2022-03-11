@@ -28,13 +28,13 @@
         </div>
         <div class="w3-display-middle login">
             <form class="w3-container w3-animate-top" id="loginForm">
-                <label for="login">Login</label>
+                <label for="login">Identifiant</label>
                 <input id="login" class="w3-input" type="text">
 
                 <div class="space10"></div>
-                <label for="passwd">Password</label>
+                <label for="passwd">Mot de passe</label>
                 <input id="passwd" class="w3-input" type="password">
-                <input class="w3-check" type="checkbox" onclick="showPwd()"> Show Password </input>
+                <input class="w3-check" type="checkbox" onclick="showPwd()"> Montrer mot de passe </input>
 
                 <div class="space10"></div>
                 <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI"></div>
@@ -44,7 +44,7 @@
                     data-sitekey="6Lf8BNAeAAAAAHM4kRwRz1GNaKN_eENB103lKkhr" 
                     data-callback='onLogin' 
                     data-action='submit'>
-                    Login
+                    Connection
                 </button>
             </form>
             <!-- <p class="w3-jumbo w3-animate-top">COMING SOON</p>
