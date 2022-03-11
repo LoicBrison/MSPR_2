@@ -1,7 +1,6 @@
 function showPwd() {
-    console.log("coucou")
-    var x = $("#passwd");
-    if (x.type === "password") {
+    var x = document.getElementById("passwd");
+    if (x.type == "password") {
         x.type = "text";
     } else {
         x.type = "password";
@@ -9,5 +8,6 @@ function showPwd() {
 }
 
 function onLogin(token) {
-    $("#loginForm").submit();
+    console.log(document.getElementById("loginForm"));
+    document.getElementById("loginForm").submit();
 }
