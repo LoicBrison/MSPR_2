@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" href="css/style.css">
 
-        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
     </head>
@@ -37,12 +37,14 @@
                 <input class="w3-check" type="checkbox" onclick="showPwd()"> Montrer mot de passe </input>
 
                 <div class="space10"></div>
+                <div class="g-recaptcha" data-sitekey="6LefBNEeAAAAAIPBJoV70qh8s3-_tC4w3ctxrMsT"></div>
                 <!-- <button class="g-recaptcha w3-btn w3-border w3-border-white" 
                     data-sitekey="6Lf8BNAeAAAAAHM4kRwRz1GNaKN_eENB103lKkhr" 
                     data-callback='onLogin' 
                     data-action='submit'>
                     Connection
                 </button> -->
+                <div class="space10"></div>
                 <input class="w3-btn w3-border w3-border-white" type="submit"></input>
             </form>
             <!-- <p class="w3-jumbo w3-animate-top">COMING SOON</p>
@@ -57,8 +59,11 @@
     </body>
 </html>
 <script>
-function onSubmit(token) {
-    console.log('coucou');
-    document.getElementById("loginForm").submit();
-}
+window.onload = function() {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+};
 </script>
