@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
     <head>
         <title>Clinique Le CHATELET</title>
@@ -11,7 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
 
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
     </head>
     <body>
@@ -27,29 +28,33 @@
             <hr class="w3-border-grey w3-animate-top" style="margin:auto;width:90%">
         </div>
         <div class="w3-display-middle login">
-            <form class="w3-container w3-animate-top" id="loginForm" action="php/login.php" method="POST" >
+            <form class="w3-container w3-animate-top" id="loginForm" action="php/loginScript.php" method="POST" >
+                <p id="warning" style="color: red;"></p>
                 <label for="login">Identifiant</label>
                 <input id="login" name="login" class="w3-input" type="text" required>
 
                 <div class="space10"></div>
                 <label for="passwd">Mot de passe</label>
                 <input id="passwd" name="passwd" class="w3-input" type="password" required>
-                <input class="w3-check" type="checkbox" onclick="showPwd()"> Montrer mot de passe </input>
+                <input class="w3-check" type="checkbox" onclick="showPwd()"> Montrer le mot de passe </input>
 
                 <div class="space10"></div>
-                <div class="g-recaptcha" data-sitekey="6LefBNEeAAAAAIPBJoV70qh8s3-_tC4w3ctxrMsT"></div>
-                <!-- <button class="g-recaptcha w3-btn w3-border w3-border-white" 
-                    data-sitekey="6Lf8BNAeAAAAAHM4kRwRz1GNaKN_eENB103lKkhr" 
-                    data-callback='onLogin' 
-                    data-action='submit'>
-                    Connection
-                </button> -->
+                <div id="g-recaptcha-error" class="g-recaptcha-error" style="color:red;"></div>
+                <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LefBNEeAAAAAIPBJoV70qh8s3-_tC4w3ctxrMsT"  data-callback="verifyCaptcha"></div>
+
                 <div class="space10"></div>
-                <input class="w3-btn w3-border w3-border-white" type="submit"></input>
+                <input class="w3-btn w3-border w3-border-white" type="button" onclick="checkRecaptcha()" value="Connexion" ></input>
             </form>
-            <!-- <p class="w3-jumbo w3-animate-top">COMING SOON</p>
-            <hr class="w3-border-grey w3-animate-top" style="margin:auto;width:40%">
-            <p class="w3-large w3-center w3-animate-top">35 days left</p> -->
+            <form class="w3-container w3-animate-top" id="authForm" action="php/2oAuth.php" method="POST" hidden>
+                <p id="warningCode">Un code vous à était envoyé par mail, valide 15 min.</p>
+
+                <div class="space10"></div>
+                <label for="code">Code</label>
+                <input id="code" name="code" class="w3-input" type="password" required>
+
+                <div class="space10"></div>
+                <input class="w3-btn w3-border w3-border-white" type="submit" value="Connexion" ></input>
+            </form>
         </div>
         <div class="w3-display-bottomleft w3-padding-large">
            Créer par Timothé VALLIER, Cédric MANSART, Lucas VAVON, Anthony CARRER, Loïc BRISON. 
@@ -58,12 +63,3 @@
 
     </body>
 </html>
-<script>
-window.onload = function() {
-    var $recaptcha = document.querySelector('#g-recaptcha-response');
-
-    if($recaptcha) {
-        $recaptcha.setAttribute("required", "required");
-    }
-};
-</script>

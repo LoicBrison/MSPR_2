@@ -37,3 +37,7 @@ div .tittle {
 div .space10{
     margin-top: 10px;
 }
+
+div .g-recaptcha-error{
+    color: red;
+}
