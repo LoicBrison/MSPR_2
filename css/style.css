@@ -39,6 +39,7 @@ div .space10{
     margin-top: 10px;
 }
 
+<<<<<<< HEAD
 /** END LOGIN PAGE **/
 
 /** INDEX PAGE **/
@@ -116,3 +117,8 @@ div .news {
     background-color: #808080;
 }
 /** END INDEX PAGE **/
+=======
+div .g-recaptcha-error{
+    color: red;
+}
+>>>>>>> 1e20ec6d28e13a441d19e8ff08afec0f6d250553
