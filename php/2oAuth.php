@@ -1,11 +1,7 @@
 <?php
     session_start();
    
-    define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'sk4m');
-    define('DB_PASSWORD', '1894');
-    define('DB_DATABASE', 'MSPR_2');
-    $db = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+    include("config.php");
 
     if(isset($_POST['code'])){
         $sql = "SELECT code FROM Utilisateurs WHERE login = '".$_SESSION['login']."' and mdp = '".$_SESSION['mdp']."' and codeTime > DATE_SUB(NOW(), INTERVAL 15 MINUTE) ;";
@@ -18,7 +14,7 @@
                 $row = $result->fetch_assoc();
 
                 if($_POST['code'] == $row['code']){
-                    header('location: https://google.com');
+                    header('location: https://localhost/index.html');
                 }
                 else{
                     header('location: http://localhost');
@@ -29,4 +25,5 @@
             }
         }
     }
+    $db->close();
 ?>
