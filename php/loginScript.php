@@ -52,7 +52,7 @@
         // If result matched $myusername and $mypassword, table row must be 1 row
         if($count == 1) {
             $result = "success";
-            $result=sendCode($myusername,$mypassword);
+            // $result=sendCode($myusername,$mypassword);
 
             // $ch = curl_init();
             // curl_setopt($ch, CURLOPT_URL, 'https://api.zenlogin.co/v1/applications/appldu2ijb1k1uzk/logins/checks');
