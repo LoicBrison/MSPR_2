@@ -28,7 +28,7 @@
             <hr class="w3-border-grey w3-animate-top" style="margin:auto;width:90%">
         </div>
         <div class="w3-display-middle login">
-            <form class="w3-container w3-animate-top" id="loginForm" action="php/loginScript.php" method="POST" >
+            <form class="w3-container w3-animate-top" id="loginForm" action="./php/loginScript.php" method="POST" >
                 <p id="warning" style="color: red;"></p>
                 <label for="login">Identifiant</label>
                 <input id="login" name="login" class="w3-input" type="text" required>
@@ -45,7 +45,7 @@
                 <div class="space10"></div>
                 <input class="w3-btn w3-border w3-border-white" type="button" onclick="checkRecaptcha()" value="Connexion" ></input>
             </form>
-            <form class="w3-container w3-animate-top" id="authForm" action="php/2oAuth.php" method="POST" hidden>
+            <form class="w3-container w3-animate-top" id="authForm" action="./php/2oAuth.php" method="POST" hidden>
                 <p id="warningCode">Un code vous à était envoyé par mail, valide 15 min.</p>
 
                 <div class="space10"></div>
