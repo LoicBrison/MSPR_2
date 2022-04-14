@@ -6,11 +6,11 @@ $(document).on('click', '#submitbtn', function(e) {
         data: $("#loginForm").serialize(),
         success: function(response) {
             console.log(response);
-            if (JSON.parse(response) === "success") {
+            if (JSON.parse(response) == "success") {
                 $('#loginForm').hide();
                 $('#authForm').removeAttr('hidden');
             } else {
-                //$('#warning').html("Identifiant ou mot de passe incorrect !");
+                $('#warning').html("Identifiant ou mot de passe incorrect !");
                 $('#warning').html(reponse);
             }
         }
