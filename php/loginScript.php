@@ -54,21 +54,21 @@
             $result = "success";
             $result=sendCode($myusername,$mypassword);
 
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.zenlogin.co/v1/applications/appldu2ijb1k1uzk/logins/checks');
-            $postData = array();
-            $postData['identity_key'] = $row['id'];
-            $postData['identity_email_address'] = $row['mail'];
-            $postData['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
-            $postData['ip_address'] = $_SERVER['REMOTE_ADDR'];
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'X_API_SECRET_KEY: sk_live_q0u7d2pwsrfwpcabtqxyjbcptd4hnx2m'
-            ));
-            $response = curl_exec($ch);
-            $response = json_decode($response, true);
-            curl_close($ch);
+            // $ch = curl_init();
+            // curl_setopt($ch, CURLOPT_URL, 'https://api.zenlogin.co/v1/applications/appldu2ijb1k1uzk/logins/checks');
+            // $postData = array();
+            // $postData['identity_key'] = $row['id'];
+            // $postData['identity_email_address'] = $row['mail'];
+            // $postData['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
+            // $postData['ip_address'] = $_SERVER['REMOTE_ADDR'];
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            // 'X_API_SECRET_KEY: sk_live_q0u7d2pwsrfwpcabtqxyjbcptd4hnx2m'
+            // ));
+            // $response = curl_exec($ch);
+            // $response = json_decode($response, true);
+            // curl_close($ch);
 
 
             $_SESSION['login']= $myusername;
