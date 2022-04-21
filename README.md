@@ -7,3 +7,7 @@
 [![Trending topics](https://images.repography.com/25114324/LoicBrison/MSPR_2/recent-activity/e967e567f24499126c78197f2f1d8404_words.svg)](https://github.com/LoicBrison/MSPR_2/commits)
 [![Top contributors](https://images.repography.com/25114324/LoicBrison/MSPR_2/recent-activity/e967e567f24499126c78197f2f1d8404_users.svg)](https://github.com/LoicBrison/MSPR_2/graphs/contributors)
 
+
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Structure
+[![Structure](https://images.repography.com/25114324/LoicBrison/MSPR_2/structure/e7ae8a4ecde0fb710336fa9298e552ad_table.svg)](https://github.com/LoicBrison/MSPR_2)
+
